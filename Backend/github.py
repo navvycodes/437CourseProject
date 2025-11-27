@@ -1,20 +1,22 @@
 import requests
 import os 
+from dotenv import load_dotenv
+load_dotenv()
 
 TOKEN = os.getenv("GITHUB_TOKEN")
 if not TOKEN:
     raise RuntimeError("NO GITHUB_TOKEN ENV")
+USERNAME = os.getenv("GITHUB_USERNAME")
+if not USERNAME:
+    raise RuntimeError("NO GITHUB_USERNAME ENV")
 
 API_URL = "https://api.github.com" 
-USERNAME = "Pranav-Raman-SR" 
-
-
 def get_my_open_prs():
     headers = {
         "Authorization": f"Bearer {TOKEN}",
         "Accept": "application/vnd.github+json",
     }
-    query = f"is:pr is:open author:{USERNAME}"
+    query = f"is:open is:pr author:{USERNAME} archived:false"
     response = requests.get(f"{API_URL}/search/issues", headers=headers, params={"q": query})
     if (response.status_code != 200):
         print(f"GitHub API error: {response.status_code} - {response.text}")
