@@ -7,7 +7,7 @@ import { NetworkStatsDisplay } from "./NetworkStatsDisplay";
 
 export const Header = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ height: "64px", minHeight: "64px", maxHeight: "64px" }}>
       <Toolbar
         sx={{
           display: "flex",
@@ -15,6 +15,9 @@ export const Header = () => {
           alignItems: "left",
           alignContent: "center",
           textAlign: "left",
+          height: "64px",
+          minHeight: "64px",
+          maxHeight: "64px",
         }}
       >
         <Box

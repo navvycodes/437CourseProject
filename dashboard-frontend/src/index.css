@@ -1,9 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
+body {
+  height: 480px;
+  width: 800px;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#root {
+  height: 480px;
+  width: 800px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Remove any gaps between flex items */
+.MuiBox-root {
+  margin: 0 !important;
+}
+
+/* Ensure no gaps in flex containers */
+[style*="display: flex"] {
+  gap: 0 !important;
 }

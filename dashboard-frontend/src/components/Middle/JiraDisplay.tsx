@@ -102,8 +102,10 @@ export const JiraDisplay = () => {
       display={"flex"}
       flexDirection={"column"}
       maxWidth={"100%"}
-      height={"200px"}
+      height={"100%"}
       width={"100%"}
+      margin={0}
+      padding={0}
     >
       {isLoading ? (
         <CircularProgress size={20} sx={{ color: "black", marginLeft: 0.5 }} />
