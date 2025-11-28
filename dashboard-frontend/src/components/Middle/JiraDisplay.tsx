@@ -111,7 +111,7 @@ export const JiraDisplay = () => {
         <DataGrid
           rows={jiraIssues.map((issue, idx) => ({ id: idx, ...issue }))}
           columns={columns}
-          initialState={{ pagination: { paginationModel: { pageSize: 5 } } }}
+          initialState={{ pagination: { paginationModel: { pageSize: 2 } } }}
           autoHeight={false}
           disableRowSelectionOnClick
           pagination

@@ -17,7 +17,7 @@ const columns: GridColDef[] = [
   { field: "waitTime", headerName: "WT", flex: 1 },
 ];
 
-export const Restaurants = () => {
+export const RestaurantsDisplay = () => {
   const [rows, setRows] = React.useState<RestaurantRow[]>([]);
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
 

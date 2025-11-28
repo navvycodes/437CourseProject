@@ -1,10 +1,14 @@
 import { Box } from "@mui/material";
-import { Restaurants } from "./Restaurants";
+import { RestaurantsDisplay } from "./RestaurantsDisplay";
+import { GithubDisplay } from "./GithubDisplay";
+import { ChatGPTButton } from "./ChatGPTButton";
 
 export const Bottom = () => {
   return (
-    <Box display={"flex"} justifyContent={"flex-start"}>
-      <Restaurants />
+    <Box display={"flex"} justifyContent={"space-between"}>
+      <RestaurantsDisplay />
+      <GithubDisplay />
+      <ChatGPTButton />
     </Box>
   );
 };
