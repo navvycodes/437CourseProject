@@ -4,6 +4,7 @@ import weather
 import github
 import network
 import restaurants
+import phone
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -65,6 +66,35 @@ def jira_issues():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     return jsonify(data)
+
+@app.route('/phone/inuse')
+def phone_inuse():
+    try:
+        data = jira.jira_phone_inuse()
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    return jsonify(data)
+
+@app.route('/phone/set-inuse') 
+def phone_set_inuse():
+    try:
+        status = True  
+        phone.set_phone_in_use(status)
+        data = {"message": "Phone status set to in use."}
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    return jsonify(data)
+
+@app.route('/phone/set-not-inuse') 
+def phone_set_not_inuse():
+    try:
+        status = False  
+        phone.set_phone_in_use(status)
+        data = {"message": "Phone status set to not in use."}
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    return jsonify(data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
