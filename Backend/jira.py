@@ -23,7 +23,7 @@ def jira_request():
     }
 
     query = {
-        "jql": "assignee = currentUser() AND status != Done AND status != Released ORDER BY priority DESC, created ASC",
+        "jql": "assignee = currentUser() AND status != Done AND status != Released AND status != Cancelled ORDER BY priority DESC, created ASC",
         "maxResults": 20,
         "fields": "key,summary,status,created,priority"
     }

@@ -3,6 +3,7 @@ import { TimeDisplay } from "./TimeDisplay";
 import Divider from "@mui/material/Divider";
 
 import { WeatherDisplay } from "./WeatherDisplay";
+import { NetworkStatsDisplay } from "./NetworkStatsDisplay";
 
 export const Header = () => {
   return (
@@ -27,6 +28,7 @@ export const Header = () => {
           <Divider orientation="vertical" flexItem sx={{ marginX: 1 }} />
           <WeatherDisplay />
           <Divider orientation="vertical" flexItem sx={{ marginX: 1 }} />
+          <NetworkStatsDisplay />
         </Box>
       </Toolbar>
     </AppBar>
