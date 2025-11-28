@@ -1,6 +1,6 @@
-import React from "react";
-import { Box, CircularProgress, Typography } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
+import React from "react";
 
 const RESTAURANTS_API_URL = "http://127.0.0.1:5000/restaurants/nearby";
 
