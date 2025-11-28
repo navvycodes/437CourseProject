@@ -13,7 +13,6 @@ export const WeatherDisplay = () => {
       fetch(WEATHER_URL)
         .then((response) => response.json())
         .then((data) => {
-          console.log("Weather data fetched:", data);
           const temperature = data?.current?.temp_f
             ? data.current?.temp_f
             : "N/A";

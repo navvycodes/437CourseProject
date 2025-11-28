@@ -13,7 +13,6 @@ export const NetworkStatsDisplay = () => {
       fetch(NETWORK_STATS_URL)
         .then((response) => response.json())
         .then((data) => {
-          console.log("Network stats data fetched:", data);
           const download = data?.download_mbps ? data.download_mbps : "N/A";
           const upload = data?.upload_mbps ? data.upload_mbps : "N/A";
           setNetworkStats(

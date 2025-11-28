@@ -74,7 +74,7 @@ def jira_issues():
 @app.route('/phone/inuse')
 def phone_inuse():
     try:
-        data = jira.jira_phone_inuse()
+        data = phone.phone_in_use()
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     return jsonify(data)
