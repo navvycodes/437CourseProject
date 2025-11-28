@@ -1,15 +1,19 @@
-from flask import Flask, jsonify
 import jira
 import weather
 import github
 import network
 import restaurants
 import phone
+from flask import Flask, jsonify
+from flask_cors import CORS
 from dotenv import load_dotenv
 load_dotenv()
 
 
 app = Flask(__name__)
+CORS(app)
+
+
 @app.route('/git-my-open-prs')
 def git_my_open_prs():
     try:
