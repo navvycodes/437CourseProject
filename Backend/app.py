@@ -4,8 +4,10 @@ import github
 import network
 import restaurants
 import phone
-from flask import Flask, jsonify
+import re
+from flask import Flask, jsonify, request
 from flask_cors import CORS
+import aiassistant
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -95,6 +97,24 @@ def phone_set_not_inuse():
         status = False  
         phone.set_phone_in_use(status)
         data = {"message": "Phone status set to not in use."}
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    return jsonify(data)
+
+@app.route('/chatgpt', methods=['POST'])
+def chatgpt():
+    try:
+        data = request.get_json()
+        user_message = data.get("user_message", "")
+        if not user_message or user_message.strip() == "":
+            return jsonify({"error": "No message provided"}), 400
+
+        # Remove special characters (keep letters, numbers, spaces, and basic punctuation)
+        cleaned_message = re.sub(r"[^a-zA-Z0-9\s.,?!']", "", user_message)
+        # Limit string length (e.g., 200 characters)
+        cleaned_message = cleaned_message[:200]
+        response = aiassistant.generate_chatgpt_response(cleaned_message)
+        data = {"response": response}
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     return jsonify(data)

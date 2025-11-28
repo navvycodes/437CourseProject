@@ -81,7 +81,7 @@ export const RestaurantsDisplay = () => {
             backgroundColor: "var(--color-surface)",
             "& .MuiDataGrid-columnHeaders": {
               backgroundColor: "var(--color-accent)",
-              color: "var(--color-text-accent)",
+              color: "var(--color-text-main)",
             },
             "& .MuiDataGrid-row": {
               backgroundColor: "var(--color-surface)",
