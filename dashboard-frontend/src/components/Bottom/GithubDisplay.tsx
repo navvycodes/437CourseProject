@@ -43,13 +43,20 @@ export const GithubDisplay = () => {
       width={"33%"}
       alignItems={"center"}
       justifyContent={"center"}
+      sx={{
+        backgroundColor: "var(--color-surface)",
+      }}
     >
       {isLoading ? (
-        <CircularProgress />
+        <CircularProgress sx={{ color: "var(--color-text-main)" }} />
       ) : (
         <>
-          <Typography variant="h4">{numberPRsForReview}</Typography>
-          <Typography variant="h6">PRS To Review</Typography>
+          <Typography variant="h4" sx={{ color: "var(--color-text-main)", fontWeight: 600 }}>
+            {numberPRsForReview}
+          </Typography>
+          <Typography variant="h6" sx={{ color: "var(--color-text-muted)", fontWeight: 500 }}>
+            PRS To Review
+          </Typography>
         </>
       )}
     </Stack>

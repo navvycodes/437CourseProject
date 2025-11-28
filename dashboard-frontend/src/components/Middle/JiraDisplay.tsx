@@ -108,7 +108,7 @@ export const JiraDisplay = () => {
       padding={0}
     >
       {isLoading ? (
-        <CircularProgress size={20} sx={{ color: "black", marginLeft: 0.5 }} />
+        <CircularProgress size={20} sx={{ color: "var(--color-text-main)", marginLeft: 0.5 }} />
       ) : (
         <DataGrid
           rows={jiraIssues.map((issue, idx) => ({ id: idx, ...issue }))}
@@ -117,6 +117,22 @@ export const JiraDisplay = () => {
           autoHeight={false}
           disableRowSelectionOnClick
           pagination
+          sx={{
+            backgroundColor: "var(--color-surface)",
+            "& .MuiDataGrid-columnHeaders": {
+              backgroundColor: "var(--color-accent)",
+              color: "var(--color-text-accent)",
+            },
+            "& .MuiDataGrid-row": {
+              backgroundColor: "var(--color-surface)",
+              "&:nth-of-type(even)": {
+                backgroundColor: "var(--color-surface-alt)",
+              },
+            },
+            "& .MuiDataGrid-cell": {
+              color: "var(--color-text-main)",
+            },
+          }}
         />
       )}
     </Box>

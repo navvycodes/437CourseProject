@@ -44,6 +44,9 @@ export const App = () => {
       overflow={"hidden"}
       margin={0}
       padding={0}
+      sx={{
+        backgroundColor: "var(--color-page-bg)",
+      }}
     >
       <Header />
       <Middle />

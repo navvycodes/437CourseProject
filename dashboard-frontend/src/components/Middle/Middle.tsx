@@ -11,6 +11,9 @@ export const Middle = () => {
       margin={0}
       padding={0}
       minHeight={0}
+      sx={{
+        backgroundColor: "var(--color-surface)",
+      }}
     >
       <JiraDisplay />
     </Box>

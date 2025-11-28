@@ -7,7 +7,16 @@ import { NetworkStatsDisplay } from "./NetworkStatsDisplay";
 
 export const Header = () => {
   return (
-    <AppBar position="static" sx={{ height: "64px", minHeight: "64px", maxHeight: "64px" }}>
+    <AppBar 
+      position="static" 
+      sx={{ 
+        height: "64px", 
+        minHeight: "64px", 
+        maxHeight: "64px",
+        backgroundColor: "var(--color-accent)",
+        boxShadow: "none",
+      }}
+    >
       <Toolbar
         sx={{
           display: "flex",
@@ -18,6 +27,7 @@ export const Header = () => {
           height: "64px",
           minHeight: "64px",
           maxHeight: "64px",
+          color: "var(--color-text-accent)",
         }}
       >
         <Box
@@ -28,9 +38,25 @@ export const Header = () => {
           }}
         >
           <TimeDisplay />
-          <Divider orientation="vertical" flexItem sx={{ marginX: 1 }} />
+          <Divider 
+            orientation="vertical" 
+            flexItem 
+            sx={{ 
+              marginX: 1,
+              borderColor: "var(--color-border-strong)",
+              opacity: 0.5,
+            }} 
+          />
           <WeatherDisplay />
-          <Divider orientation="vertical" flexItem sx={{ marginX: 1 }} />
+          <Divider 
+            orientation="vertical" 
+            flexItem 
+            sx={{ 
+              marginX: 1,
+              borderColor: "var(--color-border-strong)",
+              opacity: 0.5,
+            }} 
+          />
           <NetworkStatsDisplay />
         </Box>
       </Toolbar>

@@ -14,6 +14,9 @@ export const Bottom = () => {
       overflow={"hidden"}
       margin={0}
       padding={0}
+      sx={{
+        backgroundColor: "var(--color-surface)",
+      }}
     >
       <RestaurantsDisplay />
       <GithubDisplay />

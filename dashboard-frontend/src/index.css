@@ -1,3 +1,27 @@
+:root {
+  /* Backgrounds */
+  --color-page-bg:     #eeedea; /* main page background */
+  --color-surface:     #f5f4f1; /* cards / panels */
+  --color-surface-alt: #efefee; /* side menu, table rows */
+
+  /* Accents (the tan header bars, etc.) */
+  --color-accent:      #c1bbaf; /* "Journal", "Task" header strip */
+  --color-accent-soft: #e1d7c7; /* hover / subtle fills */
+
+  /* Lines / borders */
+  --color-border-subtle: #e3dfd6;
+  --color-border-strong: #d0c8ba;
+
+  /* Text */
+  --color-text-main:   #43372b; /* not pure black, warm brown/charcoal */
+  --color-text-muted:  #7b7166;
+  --color-text-accent: #ffffff; /* text on tan headers */
+
+  /* Misc */
+  --radius-card: 10px;
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.04);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,6 +33,9 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-page-bg);
 }
 
 #root {
@@ -17,6 +44,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: var(--color-page-bg);
 }
 
 /* Remove any gaps between flex items */
@@ -27,4 +55,56 @@ body {
 /* Ensure no gaps in flex containers */
 [style*="display: flex"] {
   gap: 0 !important;
+}
+
+/* Material-UI DataGrid styling */
+.MuiDataGrid-root {
+  border: none !important;
+  color: var(--color-text-main) !important;
+  background-color: var(--color-surface) !important;
+}
+
+.MuiDataGrid-columnHeaders {
+  background-color: var(--color-accent) !important;
+  color: var(--color-text-accent) !important;
+  border-bottom: 1px solid var(--color-border-strong) !important;
+}
+
+.MuiDataGrid-row {
+  background-color: var(--color-surface) !important;
+  border-bottom: 1px solid var(--color-border-subtle) !important;
+}
+
+.MuiDataGrid-row:nth-of-type(even) {
+  background-color: var(--color-surface-alt) !important;
+}
+
+.MuiDataGrid-cell {
+  border: none !important;
+  color: var(--color-text-main) !important;
+}
+
+.MuiDataGrid-footerContainer {
+  border-top: 1px solid var(--color-border-subtle) !important;
+}
+
+/* Material-UI Button styling */
+.MuiButton-contained {
+  background-color: var(--color-accent) !important;
+  color: var(--color-text-accent) !important;
+}
+
+.MuiButton-contained:hover {
+  background-color: var(--color-accent-soft) !important;
+  color: var(--color-text-main) !important;
+}
+
+/* Material-UI CircularProgress styling */
+.MuiCircularProgress-root {
+  color: var(--color-text-main) !important;
+}
+
+/* Material-UI Typography styling */
+.MuiTypography-root {
+  color: var(--color-text-main) !important;
 }

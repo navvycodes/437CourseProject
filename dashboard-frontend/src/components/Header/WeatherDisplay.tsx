@@ -58,6 +58,10 @@ export const WeatherDisplay = () => {
       justifyContent={"flex-start"}
       alignItems={"center"}
       textAlign={"left"}
+      sx={{
+        color: "var(--color-text-accent)",
+        fontWeight: 500,
+      }}
     >
       {imageUrl && (
         <img src={imageUrl} alt="Weather Icon" style={{ marginRight: 8 }} />

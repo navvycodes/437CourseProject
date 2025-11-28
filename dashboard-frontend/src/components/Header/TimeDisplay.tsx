@@ -15,6 +15,10 @@ export const TimeDisplay = () => {
       justifyContent={"flex-start"}
       textAlign={"left"}
       alignItems={"center"}
+      sx={{
+        color: "var(--color-text-accent)",
+        fontWeight: 500,
+      }}
     >
       {currentTime.toLocaleTimeString()}
     </Box>

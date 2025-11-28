@@ -68,7 +68,7 @@ export const RestaurantsDisplay = () => {
       maxWidth="35%"
     >
       {isLoading ? (
-        <CircularProgress size={20} sx={{ color: "black", marginLeft: 0.5 }} />
+        <CircularProgress size={20} sx={{ color: "var(--color-text-main)", marginLeft: 0.5 }} />
       ) : (
         <DataGrid
           rows={rows}
@@ -76,7 +76,23 @@ export const RestaurantsDisplay = () => {
           initialState={{ pagination: { paginationModel: { pageSize: 2 } } }}
           disableRowSelectionOnClick
           pagination
-          sx={{ flex: 1 }}
+          sx={{ 
+            flex: 1,
+            backgroundColor: "var(--color-surface)",
+            "& .MuiDataGrid-columnHeaders": {
+              backgroundColor: "var(--color-accent)",
+              color: "var(--color-text-accent)",
+            },
+            "& .MuiDataGrid-row": {
+              backgroundColor: "var(--color-surface)",
+              "&:nth-of-type(even)": {
+                backgroundColor: "var(--color-surface-alt)",
+              },
+            },
+            "& .MuiDataGrid-cell": {
+              color: "var(--color-text-main)",
+            },
+          }}
         />
       )}
     </Box>

@@ -43,10 +43,17 @@ export const NetworkStatsDisplay = () => {
   }, []);
 
   return (
-    <Box display={"flex"} alignItems={"center"}>
+    <Box 
+      display={"flex"} 
+      alignItems={"center"}
+      sx={{
+        color: "var(--color-text-accent)",
+        fontWeight: 500,
+      }}
+    >
       <NetworkCheckIcon sx={{ marginRight: 0.5 }} />
       {isLoading ? (
-        <CircularProgress size={20} sx={{ color: "black", marginLeft: 0.5 }} />
+        <CircularProgress size={20} sx={{ color: "var(--color-text-accent)", marginLeft: 0.5 }} />
       ) : (
         networkStats
       )}

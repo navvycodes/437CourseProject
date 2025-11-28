@@ -15,12 +15,24 @@ export const ChatGPTButton = () => {
     >
       <Button
         fullWidth
-        sx={{ height: "100%" }}
+        sx={{ 
+          height: "100%",
+          backgroundColor: "var(--color-accent)",
+          color: "var(--color-text-accent)",
+          "&:hover": {
+            backgroundColor: "var(--color-accent-soft)",
+            color: "var(--color-text-main)",
+          },
+        }}
         variant="contained"
         onClick={handleClick}
-        startIcon={<MicIcon />}
       >
-        ChatGPT
+        <MicIcon
+          sx={{
+            width: "100%",
+            height: "100%",
+          }}
+        />
       </Button>
     </Box>
   );
